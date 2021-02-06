@@ -93,6 +93,28 @@ public class HibernateTemplate {
 		  System.out.println(professional);
 		  return professional; 
 	}
+	
+	public static Object getCustByEmail(String email) {
+		System.out.print("email " + email);
+		String queryString = "from Customer where emailId = :email";
+		  Query query = sessionFactory.openSession().createQuery(queryString);
+		  query.setString("email", email);
+		  Object queryResult = query.uniqueResult();
+		  Customer customer = (Customer)queryResult;
+		  System.out.println(customer);
+		  return customer; 
+		}
+	
+	public static Object getProfByEmail(String email) {
+		System.out.print("email " + email);
+		String queryString = "from Professional where emailId = :email";
+		  Query query = sessionFactory.openSession().createQuery(queryString);
+		  query.setString("email", email);
+		  Object queryResult = query.uniqueResult();
+		  Professional professional = (Professional)queryResult;
+		  System.out.println(professional);
+		  return professional; 
+		}
 	/*public static Object getObjectByUserPass(String emailId,String password) {
 		
 		System.out.println("mailId" + emailId + " password " + password);

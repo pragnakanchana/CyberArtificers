@@ -17,22 +17,24 @@ public class ProfessionalDAO {
 		return HibernateTemplate.addObject(professional);
 	}
 
-	
-
-	public List<Professional> getAllCustomers() {
-		// TODO Auto-generated method stub
-		List<Professional> professionals=(List)HibernateTemplate.getObjectListByQuery("From Customer");
-		System.out.println("Inside All Customers ..."+professionals);
+	public List<Professional> getAllProfessionals() {
+		List<Professional> professionals=(List)HibernateTemplate.getObjectListByQuery("From Professional");
+		System.out.println("Inside All Professional ..."+professionals);
 		return professionals;
 	}
 
 
 
 	public static Professional getProfByUserPass(String mailId, String password) {
-		// TODO Auto-generated method stub
 		System.out.println("DAO "+mailId + " " + password);
 
 		return (Professional)HibernateTemplate.getObjectByUserPassProf(mailId,password);
 	}
 
+	public Professional getProfByEmail(String email) {
+		// TODO Auto-generated method stub
+		System.out.println("THERERERERE......DAO "+email);
+		return (Professional)HibernateTemplate.getProfByEmail(email);
+		
+	}
 }

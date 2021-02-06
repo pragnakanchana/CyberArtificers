@@ -10,7 +10,10 @@
     <property name="show_sql">true</property>
     <property name="hbm2ddl.auto">update</property>
 	<mapping class="com.dto.Customer"/>
-    <mapping class="com.dto.Professional"/>   
-    <!-- <mapping class="com.dto.Services"/> --> 
+    <mapping class="com.dto.Professional"/> 
+     <mapping class="com.dto.Services"/> 
+     <mapping class="com.dto.Testimonials"/> 
+     
+	<mapping class="com.dto.Requests"/>
   </session-factory>
 </hibernate-configuration>
